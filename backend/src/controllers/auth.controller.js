@@ -2,9 +2,9 @@ import User from '../models/User.model.js';
 import bcrypt from 'bcrypt';
 import { generateToken } from '../utils/jwt.utils.js';
 
-// @desc    Register a new user
-// @route   POST /api/auth/register
-// @access  Public
+//     Register a new user
+//    POST /api/auth/register
+//   Public
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;

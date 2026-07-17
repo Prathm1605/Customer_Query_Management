@@ -1,7 +1,7 @@
 import Query from '../models/Query.model.js';
 
-// @desc    Create a new query
-// @route   POST /api/queries
+//   Create a new query
+// POST /api/queries
 export const createQuery = async (req, res) => {
   try {
     const { title, description, category, priority } = req.body;
@@ -20,8 +20,8 @@ export const createQuery = async (req, res) => {
   }
 };
 
-// @desc    Get all queries (with pagination, search, and filters)
-// @route   GET /api/queries
+//   Get all queries (with pagination, search, and filters)
+//   GET /api/queries
 export const getQueries = async (req, res) => {
   try {
     const { search, status, priority, category, page = 1, limit = 10 } = req.query;
@@ -66,8 +66,8 @@ export const getQueries = async (req, res) => {
   }
 };
 
-// @desc    Get a single query by ID
-// @route   GET /api/queries/:id
+// Get a single query by ID
+//   GET /api/queries/:id
 export const getQueryById = async (req, res) => {
   try {
     const query = await Query.findOne({ _id: req.params.id, isDeleted: false })
@@ -86,8 +86,8 @@ export const getQueryById = async (req, res) => {
   }
 };
 
-// @desc    Update a query (Description, Status, Category, or Priority)
-// @route   PUT /api/queries/:id
+//     Update a query (Description, Status, Category, or Priority)
+//   PUT /api/queries/:id
 export const updateQuery = async (req, res) => {
   try {
     const query = await Query.findOne({ _id: req.params.id, isDeleted: false });
@@ -105,6 +105,7 @@ export const updateQuery = async (req, res) => {
       }
       
       // Customers can update these specific fields
+      query.title = req.body.title || query.title;
       query.description = req.body.description || query.description;
       query.category = req.body.category || query.category;
       query.priority = req.body.priority || query.priority;
@@ -123,8 +124,8 @@ export const updateQuery = async (req, res) => {
   }
 };
 
-// @desc    Soft delete a query
-// @route   PATCH /api/queries/:id/delete
+//     Soft delete a query
+//   PATCH /api/queries/:id/delete
 export const deleteQuery = async (req, res) => {
   try {
     const query = await Query.findById(req.params.id);
