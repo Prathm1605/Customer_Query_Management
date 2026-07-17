@@ -122,7 +122,7 @@ docker-compose up -d --build
 
 ## ✍️ Author
 
-**Rushikesh Bamb**
+**Prathmesh Kulkarni**
 
 * **GitHub:** https://github.com/Prathm1605
 * **Email:** prathmeshkulkarni550@gmail.com
