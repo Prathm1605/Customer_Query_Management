@@ -99,7 +99,7 @@ VITE_API_URL=http://localhost:5000/api
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rushibamb/Query_Management_System.git
+git clone https://github.com/Prathm1605/Customer_Query_Management
 cd Query_Management_System
 
 ```
